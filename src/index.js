@@ -15,7 +15,7 @@ strings.sort();
 
 var stringsMatched = storage.get('matches') || [];
 var sorter = function(a, b){
-	return a[1] > b[1]
+	return a[1] - b[1]
 };
 
 var localSort = function(a, b){
@@ -68,7 +68,7 @@ var App = React.createClass({
 
 		return (
 			<div>
-				<input type="text" placeholder="Start typing" onChange = {this.handleChange} value={this.state.selected} />
+				<input type="text" placeholder="Start typing" onChange = {this.handleChange} value={this.state.selected} autocomplete="off" />
 
 				{this.state.suggestion.map(function(str){
 					var bounds = this.add.bind(this, str);
